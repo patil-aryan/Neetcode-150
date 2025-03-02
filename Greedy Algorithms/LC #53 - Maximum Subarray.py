@@ -72,16 +72,38 @@ Subarray Visualization:
 Sum = 4 + (-1) + 2 + 1 = 6
 Result: maxSum = 6
 
+# Detailed Examples and Walkthroughs
+
+### Example 1: Mixed Positive and Negative Numbers
+Input: nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+Output: 6
+
+Step-by-step:
+- Start with maxSum = -2 (first element) and currSum = 0.
+- Element -2: currSum = max(0, 0) = 0, then currSum += -2 = -2, maxSum = max(-2, -2) = -2.
+- Element 1: currSum = max(-2, 0) = 0, then currSum += 1 = 1, maxSum = max(-2, 1) = 1.
+- Element -3: currSum = max(1, 0) = 1, then currSum += -3 = -2, maxSum = max(1, -2) = 1.
+- Element 4: currSum = max(-2, 0) = 0, then currSum += 4 = 4, maxSum = max(1, 4) = 4.
+- Element -1: currSum = max(4, 0) = 4, then currSum += -1 = 3, maxSum = max(4, 3) = 4.
+- Element 2: currSum = max(3, 0) = 3, then currSum += 2 = 5, maxSum = max(4, 5) = 5.
+- Element 1: currSum = max(5, 0) = 5, then currSum += 1 = 6, maxSum = max(5, 6) = 6.
+- Element -5: currSum = max(6, 0) = 6, then currSum += -5 = 1, maxSum = max(6, 1) = 6.
+- Element 4: currSum = max(1, 0) = 1, then currSum += 4 = 5, maxSum = max(6, 5) = 6.
+
+Subarray Visualization:
+[-2, 1, -3, [4, -1, 2, 1], -5, 4]
+Sum = 4 + (-1) + 2 + 1 = 6
+Result: maxSum = 6
+
 ### Example 2: All Negative Numbers
 Input: nums = [-2, -1, -3]
 Output: -1
 
 Step-by-step:
-| Element | currSum (before reset) | currSum (after reset) | currSum (after add) | maxSum | Explanation                                   |
-|---------|-----------------------|-----------------------|---------------------|--------|-----------------------------------------------|
-| -2      | 0                     | 0                     | -2                  | -2     | Start, maxSum initialized to -2               |
-| -1      | -2                    | 0                     | -1                  | -1     | Reset to 0, add -1, update maxSum             |
-| -3      | -1                    | 0                     | -3                  | -1     | Reset to 0, add -3, maxSum stays              |
+- Start with maxSum = -2 (first element) and currSum = 0.
+- Element -2: currSum = max(0, 0) = 0, then currSum += -2 = -2, maxSum = max(-2, -2) = -2.
+- Element -1: currSum = max(-2, 0) = 0, then currSum += -1 = -1, maxSum = max(-2, -1) = -1.
+- Element -3: currSum = max(-1, 0) = 0, then currSum += -3 = -3, maxSum = max(-1, -3) = -1.
 
 Subarray Visualization:
 [-2, [-1], -3]
