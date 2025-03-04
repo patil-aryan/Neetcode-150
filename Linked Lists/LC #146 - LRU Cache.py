@@ -212,26 +212,3 @@ Notes on Overall Approach
 
 
 
-# Test cases
-if __name__ == "__main__":
-    cache = LRUCache(2)
-    operations = [
-        ("put", (1, 1), None),
-        ("put", (2, 2), None),
-        ("get", (1,), 1),
-        ("put", (3, 3), None),
-        ("get", (2,), -1),
-        ("put", (4, 4), None),
-        ("get", (1,), -1),
-        ("get", (3,), 3),
-        ("get", (4,), 4)
-    ]
-    
-    for op, args, expected in operations:
-        if op == "put":
-            cache.put(*args)
-            print(f"put{args} -> Cache updated")
-        elif op == "get":
-            result = cache.get(*args)
-            print(f"get{args} -> Result: {result}, Expected: {expected}, "
-                  f"{'Pass' if result == expected else 'Fail'}")
