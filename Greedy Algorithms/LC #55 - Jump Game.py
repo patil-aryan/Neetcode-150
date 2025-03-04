@@ -3,7 +3,7 @@ from typing import List
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
         """
-        Problem: Jump Game (NeetCode 150 #55)
+        Problem: Jump Game (NeetCode 150 #55) - https://leetcode.com/problems/jump-game/
         
         Description:
         Given an array of non-negative integers where each element represents your maximum 
